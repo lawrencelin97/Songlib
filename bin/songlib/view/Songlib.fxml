@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+
+<BorderPane prefHeight="288.0" prefWidth="260.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="songlib.view.SonglibController">
+ 	<right>
+ 		<GridPane hgap="10" vgap="10">
+ 			<Text text="Song Name:" GridPane.rowIndex="0" GridPane.valignment="CENTER"/>
+			<TextField fx:id="song" GridPane.columnIndex="1" prefColumnCount="10" promptText="Song" GridPane.rowIndex="0" />
+ 			<Text text="Artist Name:" GridPane.rowIndex="1" GridPane.valignment="CENTER"/>
+			<TextField fx:id="artist" GridPane.columnIndex="1" prefColumnCount="10" promptText="Artist" GridPane.rowIndex="1" />
+ 			<Text text="Album Name:" GridPane.rowIndex="2" GridPane.valignment="CENTER"/>
+			<TextField fx:id="album" GridPane.columnIndex="1" prefColumnCount="10" promptText="Album" GridPane.rowIndex="2" />
+			<Text text="Year:" GridPane.rowIndex="3" GridPane.valignment="CENTER"/>
+			<TextField fx:id="year" GridPane.columnIndex="1" prefColumnCount="10" promptText="Year" GridPane.rowIndex="3" />
+			
+			 			
+ 			<Button fx:id="add" maxWidth="1.7976931348623157E308" onAction="#convert" text="Add" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+ 			<Button fx:id="edit" maxWidth="1.7976931348623157E308" onAction="#convert" prefHeight="26.0" prefWidth="42.0" text="Edit" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+ 			<Button fx:id="delete" maxWidth="1.7976931348623157E308" onAction="#convert" text="Delete" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+ 			<padding>
+				<Insets bottom="10" left="5" right="10" top="10" />
+			</padding>
+         <columnConstraints>
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+ 		</GridPane>
+ 	</right>
+ 	<left>
+ 		<GridPane >
+ 		<Text text="Song Name - Artist" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM"/>
+    	<ListView fx:id="listView" GridPane.rowIndex="1" prefHeight="350.0" prefWidth="200.0">
+         </ListView>
+      		<padding>
+				<Insets bottom="10" left="10" right="0" top="10" />
+			</padding>
+		</GridPane>
+    </left>
+	
+</BorderPane>
