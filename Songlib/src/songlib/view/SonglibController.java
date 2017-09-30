@@ -34,7 +34,7 @@ public class SonglibController {
 	 public void start(Stage mainStage) {                
 	      // create an ObservableList 
 	      // from an ArrayList      
-		 
+		 songList.loadSongs();
 		 updateList();
 
 	      // set listener for the items
@@ -49,7 +49,6 @@ public class SonglibController {
 	 
 	 private void showSongInfo(){
 		 int index = listView.getSelectionModel().getSelectedIndex();
-		 System.out.println(index);
 		 if(index>-1){
 			 Song song = songList.getSong(index);
 			 title.setText(song.title);
@@ -63,6 +62,9 @@ public class SonglibController {
 		obsList = FXCollections.observableArrayList(                               
                 songList.toArrayList());                
 	     listView.setItems(obsList);  
+	     
+	      // select the first item
+	      listView.getSelectionModel().select(0);
 	}
 	 
 	private void add(){
